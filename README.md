@@ -90,7 +90,7 @@ http://127.0.0.1:8000/docs
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/AI-Research-Agent.git
+git clone https://github.com/maheen02mujahid-tech/AI-Research-Agent.git
 cd AI-Research-Agent
 ```
 
