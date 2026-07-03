@@ -1,53 +1,46 @@
 # AI Research Agent
 
-AI Research Agent is an AI-powered document intelligence platform that allows users to upload PDF documents, ask natural language questions, generate summaries, and compare concepts using Retrieval-Augmented Generation (RAG).
+An AI-powered document intelligence platform. Upload a PDF, ask questions, get answers with source citations.
+
+**[Live Demo](https://maheen02mujahid-tech.github.io/AI-Research-Agent-)** — 3 free questions per visitor
 
 ---
 
-## Features
+## What It Does
 
 - Upload and index PDF documents
-- Ask questions about uploaded documents using natural language
-- Retrieval-Augmented Generation (RAG) with semantic search
-- Hybrid RAG with document-grounded responses and general AI knowledge when appropriate
+- Ask natural language questions about your documents
+- Get answers with source citations including file name and page number
+- Summarize documents automatically
+- Compare concepts across documents
 - Conversational memory for follow-up questions
-- Automatic document summarization
-- Concept comparison
-- Source citations with file names, page numbers, and excerpts
-- FastAPI backend with interactive Swagger documentation
 
 ---
 
 ## Tech Stack
 
-### AI & LLM
-- OpenAI GPT-4o Mini
-- LangChain
-- LangGraph
-- Retrieval-Augmented Generation (RAG)
-- OpenAI Embeddings
-
-### Backend
-- Python
-- FastAPI
-- Pydantic
-
-### Vector Database
-- ChromaDB
-
-### Document Processing
-- PyPDF
-- Recursive Character Text Splitter
+| Layer | Technology |
+|-------|-----------|
+| LLM | OpenAI GPT-4o Mini |
+| RAG Pipeline | LangChain, LangGraph |
+| Vector Database | ChromaDB |
+| Embeddings | OpenAI Embeddings |
+| Backend | Python, FastAPI |
+| Frontend | HTML, CSS, JavaScript |
+| Deployment | Render (backend), GitHub Pages (frontend) |
 
 ---
 
-## Project Architecture
+## Architecture
 
 ```
 User
    │
    ▼
-FastAPI REST API
+GitHub Pages (Frontend)
+   │
+   ▼
+FastAPI REST API (Render)
    │
    ▼
 LangGraph Agent
@@ -68,75 +61,73 @@ OpenAI Embeddings
 
 ---
 
-## API Endpoints
+## Try the Demo
 
-| Endpoint | Description |
-|----------|-------------|
-| POST /chat | Ask questions about uploaded documents |
-| POST /summarize | Generate a document summary |
-| POST /compare | Compare concepts within the documents |
-| POST /upload | Upload and index PDF documents |
+A sample document is included in the `data/` folder (`ArtificialIntellegence.pdf`). Upload it and try:
 
-Interactive API documentation is available at:
-
-```
-http://127.0.0.1:8000/docs
-```
+- "What is Artificial Intelligence?"
+- "Who invented AI and when?"
+- "What are the pros and cons of AI?"
+- "What is a Support Vector Machine?"
+- "What are some real-world applications of AI?"
 
 ---
 
-## Installation
+## API Endpoints
 
-Clone the repository:
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `POST` | `/upload` | Upload and index a PDF |
+| `POST` | `/chat` | Ask a question |
+| `POST` | `/summarize` | Summarize documents |
+| `POST` | `/compare` | Compare concepts |
+
+Interactive API docs: `http://127.0.0.1:8000/docs`
+
+---
+
+## Run Locally
+
+**1. Clone the repository**
 
 ```bash
-git clone https://github.com/maheen02mujahid-tech/AI-Research-Agent.git
-cd AI-Research-Agent
+git clone https://github.com/maheen02mujahid-tech/AI-Research-Agent-.git
+cd AI-Research-Agent-
 ```
 
-Install dependencies:
+**2. Create a virtual environment**
 
 ```bash
-uv sync
+python -m venv .venv
+.venv\Scripts\activate
 ```
 
-Create a `.env` file:
+**3. Install dependencies**
 
-```text
-OPENAI_API_KEY=your_openai_api_key
+```bash
+pip install -r requirements.txt
 ```
 
-Run the API:
+**4. Create a `.env` file**
+
+```
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+**5. Start the backend**
 
 ```bash
 python -m uvicorn api:app --reload
 ```
 
-Open Swagger UI:
+**6. Open the frontend**
 
+```bash
+cd frontend
+python -m http.server 5500
 ```
-http://127.0.0.1:8000/docs
-```
 
----
-
-## Example Capabilities
-
-- "What is software redundancy?"
-- "Summarize the document."
-- "Compare self-checking logic and monotonic logic."
-- "Explain it more simply."
-- Upload additional PDF documents and query them instantly.
-
----
-
-## Future Improvements
-
-- Modern web frontend
-- User authentication
-- Chat history persistence
-- Support for additional document formats
-- Cloud deployment
+Then visit `http://localhost:5500`
 
 ---
 
@@ -144,4 +135,4 @@ http://127.0.0.1:8000/docs
 
 **Maheen Mujahid**
 
-Personal project exploring Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), vector databases, LangChain, LangGraph, and FastAPI.
+Built to explore LLMs, Retrieval-Augmented Generation, vector databases, LangChain, LangGraph, and FastAPI.
