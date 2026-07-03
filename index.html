@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Research Agent</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <div class="brand">
+        <div class="brand-icon">R</div>
+        <span class="brand-name">Research Agent</span>
+      </div>
+      <button class="new-chat-btn">+ New Chat</button>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-label">Documents</p>
+      <label class="upload-btn" for="pdf-input">Upload PDF</label>
+      <input type="file" id="pdf-input" accept=".pdf" hidden />
+      <div id="upload-status"></div>
+      <ul id="doc-list"></ul>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-label">Actions</p>
+      <button class="sidebar-action" id="summarize-btn">Summarize documents</button>
+      <button class="sidebar-action" id="compare-btn">Compare concepts</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="chat-header">
+      <span class="header-title">AI Research Agent</span>
+      <span class="header-sub">Powered by GPT-4o Mini</span>
+    </div>
+
+    <div class="chat-messages" id="chat-messages">
+      <div class="welcome">
+        <div class="welcome-icon">R</div>
+        <h2>How can I help you today?</h2>
+        <p>Upload a PDF and ask me anything about it.</p>
+      </div>
+    </div>
+
+    <div class="input-bar">
+      <div class="input-wrap">
+        <input
+          type="text"
+          id="question-input"
+          placeholder="Ask anything about your documents..."
+          autocomplete="off"
+        />
+        <button id="send-btn">Send</button>
+      </div>
+      <p class="disclaimer">AI Research Agent can make mistakes. Verify important information.</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
