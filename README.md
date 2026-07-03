@@ -3,6 +3,7 @@
 An AI-powered document intelligence platform. Upload a PDF, ask questions, get answers with source citations.
 
 **[Live Demo](https://maheen02mujahid-tech.github.io/AI-Research-Agent-)** — 3 free questions per visitor
+> The backend is hosted on Render's free tier and may take up to 50 seconds to wake up on the first request. If the upload fails, wait a moment and try again.
 
 ---
 
