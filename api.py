@@ -14,6 +14,16 @@ load_dotenv()
 
 app = FastAPI(title="AI Research Agent")
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 vector_store = load_vector_store()
 assistant = AIResearchAssistant(vector_store)
 agent = build_research_agent(assistant)
