@@ -131,6 +131,15 @@ python -m http.server 5500
 Then visit `http://localhost:5500`
 
 ---
+## Screenshots
+
+![Upload and Chat](screenshots/screenshot1.png)
+
+![AI Response with Sources](screenshots/screenshot2.png)
+
+![Document Summary](screenshots/screenshot3.png)
+
+![Concept Comparison](screenshots/screenshot4.png)
 
 ## Author
 
